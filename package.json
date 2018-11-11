@@ -1,0 +1,56 @@
+{
+  "name": "metalsmith-tweet-embed",
+  "version": "1.0.0-beta.1",
+  "description": "Metalsmith plugin for converting twitter status URLS to an embedded tweet",
+  "main": "dist/metalsmith-tweet-embed.js",
+  "module": "dist/metalsmith-tweet-embed.es.js",
+  "scripts": {
+    "build": "npm-run-all clean lint transpile",
+    "clean": "rm -rf dist/*",
+    "coverage": "BABEL_ENV=test nyc ava ./test/*.js",
+    "coverage:report": "nyc report --reporter=text-lcov | coveralls",
+    "lint": "eslint .",
+    "prepare": "npm run build",
+    "test": "BABEL_ENV=test ava ./test/*.js",
+    "transpile": "rollup -c rollup.config.js"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "author": "Jason Wilson <jason@scurker.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/scurker/metalsmith-tweet-embed.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "metalsmith",
+    "twitter",
+    "tweet",
+    "embed"
+  ],
+  "author": "Jason Wilson <jason@scurker.com>",
+  "license": "MIT",
+  "dependencies": {
+    "got": "^9.3.2",
+    "minimatch": "^3.0.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.5",
+    "@babel/preset-env": "^7.1.5",
+    "@babel/register": "^7.0.0",
+    "@scurker/eslint-config": "^1.1.4",
+    "ava": "^1.0.0-rc.1",
+    "eslint": "^5.9.0",
+    "metalsmith": "^2.3.0",
+    "nyc": "^13.1.0"
+  },
+  "ava": {
+    "require": [
+      "@babel/register"
+    ]
+  }
+}

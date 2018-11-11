@@ -60,7 +60,7 @@ test('should pass-through options to twitter oembed api', async t => {
   t.notRegex(contents, /widget\.js/);
 });
 
-test.failing('should allow frontmatter options to override pipeline options', async t => {
+test('should allow frontmatter options to override pipeline options', async t => {
   await metalsmith('frontmatter')
     .use(embed({ options: { align: 'left' } }))
     .build();
@@ -80,5 +80,4 @@ test('should only match files with pattern', async t => {
 
   t.notRegex(html, /Hello World/);
   t.regex(markdown, /Hello World/);
-
 });

@@ -31,9 +31,9 @@ export default function twitterEmbed(opts = {}) {
     await Promise.all(Object.keys(files)
       .filter(file => minimatch(file, pattern))
       .map(async file => {
-        let contentString = files[file].contents.toString();
-
-        files[file].contents = Buffer.from(await embedTweets(contentString, options));
+        let contentString = files[file].contents.toString()
+          , combinedOptions = Object.assign({}, options, files[file].twitter || {});
+        files[file].contents = Buffer.from(await embedTweets(contentString, combinedOptions));
       }));
 
     done();

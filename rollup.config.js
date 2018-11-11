@@ -1,7 +1,5 @@
-import { readFileSync } from 'fs';
 import babel from 'rollup-plugin-babel';
-
-const pkg = JSON.parse(readFileSync('./package.json', 'utf8'));
+import pkg from './package.json';
 
 export default {
   input: 'src/index.js',

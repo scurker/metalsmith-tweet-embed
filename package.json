@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-tweet-embed",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "description": "Metalsmith plugin for converting twitter status URLS to an embedded tweet",
   "main": "dist/metalsmith-tweet-embed.js",
   "module": "dist/metalsmith-tweet-embed.es.js",
